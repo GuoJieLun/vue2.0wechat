@@ -1,0 +1,40 @@
+@import "mixins";
+@include flex-grid-columns();
+@include flex-item-columns();
+
+.flex-row{
+  @include flexBox();
+  @include box-orient(horizontal);
+  @include flex-direction(row);
+}
+
+.flex-col{
+  @include flexBox();
+  @include box-orient(vertical);
+  @include flex-direction(column);
+}
+
+.flex-wrap{
+  @include flexBox();
+  @include flex-wrap(wrap);
+}
+
+
+
+
+
+.flex-center{
+  @include flexBox();
+  @include flex-align(center);
+}
+
+.flex-horizontal{
+  @include box-orient(horizontal);
+  @include flex-direction(row);
+
+}
+.flex-vertical{
+  @include box-orient(vertical);
+  @include flex-direction(column);
+}
+

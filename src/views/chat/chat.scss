@@ -1,0 +1,84 @@
+@import "../../assets/sass/mixins";
+
+.chat-item {
+  margin-left: 6px;
+  padding: 6px 0;
+  border-bottom: 1px solid #ededed;
+  &:last-child {
+    background: none;
+  }
+  .mint-cell-wrapper {
+    background: none;
+    margin: 0;
+    padding-left:0px;
+    overflow: initial;
+  }
+
+  .chat-item-photo {
+    border-radius: 5px;
+  }
+  .mint-cell-swipe-button {
+    line-height: 60px;
+    font-size: 18px;
+  }
+  .mint-cell-value {
+    width: 100%;
+  }
+  .icon-box{
+    position: relative;
+    margin-right: 10px;
+    .tips-badge{
+      position: absolute;
+      font-style: initial;
+      right: -9px;
+      top: -5px;
+      z-index: 2;
+      padding: 0 4px;
+      width: auto;
+      min-width: 18px;
+      height: 18px;
+      line-height: 18px;
+      border-radius: 9px;
+      color: #ffffff;
+      text-align: center;
+      font-size: 14px;
+      background-color: #f43531;
+    }
+    .tips-badge-dot{
+      @extend .tips-badge;
+      right: -2px;
+      top: -2px;
+      min-width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      color: #ffffff;
+    }
+  }
+  .des {
+    .msg {
+      height: 23px;
+      line-height: 23px;
+      font-size: 14px;
+      overflow: hidden;
+      color: #888;
+    }
+    .name {
+      font-size: 18px;
+      color: #000;
+      height: 25px;
+      line-height: 25px;
+    }
+    .icon-mute{
+      color: #d8d8d8;
+      font-size: 14px;
+      margin-left:1px;
+    }
+  }
+}
+
+.chat-sheet{
+  .mint-actionsheet-listitem{
+    color: #E72B2B;
+  }
+}
+

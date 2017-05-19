@@ -1,0 +1,170 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin css-transition($val) {
+  -webkit-transition: $val;
+  -moz-transition: $val;
+  -ms-transition: $val;
+  transition: $val;
+}
+
+@mixin animation($val) {
+  -webkit-animation: $val;
+  -moz-animation: $val;
+  animation: $val;
+
+}
+
+@mixin fullPanel() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin transform($val) {
+  -webkit-transform: $val;
+  -moz-transform: $val;
+  -o-transform: $val;
+  -ms-transform: $val;
+  transform: $val;
+
+}
+
+@mixin box-shadow($val) {
+  -webkit-box-shadow: $val;
+  -moz-box-shadow: $val;
+  -ms-box-shadow: $val;
+  box-shadow: $val;
+
+}
+
+@mixin flex($val) {
+  -webkit-box-flex: $val;
+  -moz-box-flex: $val auto;
+  -webkit-flex: $val auto;
+  -ms-flex: $val auto;
+  flex: $val auto;
+}
+
+
+@mixin css-origin($val) {
+  -webkit-transform-origin: $val;
+  -moz-transform-origin: $val;
+  -ms-transform-origin: $val;
+  transform-origin: $val;
+}
+
+%absolute{
+ position:absolute;top:0;left:0;right:0;bottom:0
+}
+
+%text-overflow{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+%onePxBorder{
+  border-top: 1px solid #ededed;
+  content: " ";
+  height: 1px;
+  left: 0;
+  bottom:0;
+  position: absolute;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  width: 200%;
+}
+
+
+@mixin flexBox(){
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+
+
+@mixin flex-wrap($val){
+  -webkit-flex-wrap:$val;
+  -ms-flex-wrap: $val;
+  flex-wrap:$val;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+@mixin flex-align($val){
+  -webkit-box-pack: $val;
+  -ms-flex-pack: $val;
+  -webkit-justify-content: $val;
+  justify-content: $val;
+  -webkit-box-align: $val;
+  -ms-flex-align: $val;
+  -webkit-align-items: $val;
+  align-items: $val;
+  text-align: $val;
+}
+
+@mixin box-orient($val){
+  -webkit-box-orient: $val;
+  -moz-box-orient: $val;
+  -ms-box-orient: $val;
+  box-orient: $val;
+}
+
+@mixin flex-direction($val){
+  -webkit-flex-direction: $val;
+  -moz-flex-direction: $val;
+  -ms-flex-direction: $val;
+  flex-direction: $val;
+}
+
+$grid-columns:12;
+@mixin flex($val,$status:0,$type:'') {
+  @if ($type == same) {
+    -webkit-box-flex: $val ;
+    -moz-box-flex: $val;
+    box-flex:$val;
+    -webkit-flex: $val percentage($val/$grid-columns);
+    -ms-flex: $val  percentage($val/$grid-columns);
+    flex: $val  percentage($val/$grid-columns);
+  }@else{
+    -webkit-box-flex: $val ;
+    -moz-box-flex: $val;
+    box-flex:$val;
+    -webkit-flex: $val $status;
+    -ms-flex: $val $status;
+    flex: $val $status;
+  }
+
+}
+
+@mixin flex-grid-columns($i:1) {
+  @for $i from 1 through $grid-columns {
+    .flex-grow-#{$i}{
+      @include flex($i);
+    }
+  }
+}
+
+@mixin flex-item-columns($i:1) {
+  @for $i from 1 through $grid-columns {
+    .flex-item-#{$i}{
+      @include flex($i,0,same);
+    }
+  }
+}
