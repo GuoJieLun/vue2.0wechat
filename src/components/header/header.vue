@@ -1,6 +1,6 @@
 <template>
       <mt-header   :title="title">
-        <mt-button slot="left" icon="back" v-if="goBack" @click="$router.go(-1)">返回</mt-button>
+        <mt-button slot="left" icon="back" v-if="goBack" @click="$router.go(-1)">返回1</mt-button>
         <div slot="right">
             <slot name="r-info"></slot>
         </div>
